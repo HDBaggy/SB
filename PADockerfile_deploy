@@ -1,0 +1,5 @@
+FROM perfectlysoft/perfectassistant:3.1:latest
+COPY .build_lin/release/*.so /perfect-deployed/perfectbackend/
+COPY .build_lin/release/perfectBackend /perfect-deployed/perfectbackend/
+RUN rm -rf /var/lib/apt/lists/*
+CMD cd /perfect-deployed/perfectbackend/ && ./perfectBackend
